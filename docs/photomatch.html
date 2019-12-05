@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhotoMatch Help</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="help-for-photomatch">HELP for PhotoMatch</h1>
+<p>Algorithm explanation…</p>
+<h2 id="preprocessing">Preprocessing</h2>
+<p><strong>Full Image Size/Max Image Size</strong></p>
+<p><strong>Decolorization</strong><br>
+Contrast Preserving Decolorization</p>
+<p><strong>ACEBSF</strong><br>
+Adaptive Contrast Enhancement Based on modified Sigmoid Function<br>
+Blocksize (Width: 8/Height: 8)<br>
+L: 0.3<br>
+K1: 10<br>
+K2: 0.50</p>
+<p><strong>CLAHE</strong><br>
+Contrast Limited Adaptive Histogram Equalization<br>
+Clip Limit: 40<br>
+Tiles Size X: 8<br>
+Tiles Size Y: 8</p>
+<p><strong>CMBFHE</strong><br>
+Cascaded Multistep Binomial Filtering Histogram Equalization<br>
+Block Size (Width: 11/Height: 11)</p>
+<p><strong>DHE</strong><br>
+Dynamic Histogram Equalization<br>
+x: 1</p>
+<p><strong>FAHE</strong><br>
+Fast implementation of Adaptive Histogram Equalization<br>
+Block Size (Width: 11/Height: 11)</p>
+<p><strong>HMCLAHE</strong><br>
+Histogram Modified Contrast Limited Adaptive Histogram Equalization<br>
+Block Size (Width: 11/Height: 11)<br>
+L: 0.03<br>
+Phi: 0.50</p>
+<p><strong>LCE-BSESCS</strong><br>
+Local Contrast Enhancement Utilizing Bidirectional Switching Equalization of Separated and Clipped Subhistograms<br>
+Block Size (Width: 33/Height: 33)</p>
+<p><strong>MSRCP</strong><br>
+Multiscale Retinex with Chromaticity Preservation<br>
+Retinex Scales<br>
+Small scale: 10<br>
+Mid Scale: 100<br>
+Large scale: 220</p>
+<p><strong>NOSHP</strong><br>
+Non-Overlapped Sub-blocks and local Histogram Projection<br>
+Block Size (Width: 127/Height: 127)</p>
+<p><strong>POHE</strong><br>
+Parametric- Oriented Histogram Equalization<br>
+Block Size (Width: 127/Height: 127)</p>
+<p><strong>RSWHE</strong><br>
+Recursively Separated and Weighted Histogram Equalization</p>
+<p><strong>Wallis Filter</strong><br>
+Locally adaptive contrast adjustment filter to enhance image gray-scale details. It ensures that within every specified window, the local mean and the standard deviation will match some given (user-specified) values. It is great to eliminate uneven illumination, where bright and dark tones are both present.<br>
+Contrast: 1<br>
+Brightness: 0.20<br>
+Imposed Average: 41<br>
+Imposed Local StdDev: 127<br>
+Kernel Size: 50</p>
+<p>[Source: <a href="https://www.microimages.com/documentation/TechGuides/55Wallis.pdf">https://www.microimages.com/documentation/TechGuides/55Wallis.pdf</a>]</p>
+<h2 id="feature-extraction">Feature Extraction</h2>
+<p><em>KEYPOINT DETECTOR</em></p>
+<p><strong>AGAST</strong><br>
+Adaptive and Generic Accelerated Segment Test. Corner detector. It is an optimization of FAST, thus also based on Accelerated Segment Test (AST), but  its decision tree is generic, with no need to retrain the it every time.</p>
+<p><a href="http://www.i6.in.tum.de/Main/ResearchAgast">http://www.i6.in.tum.de/Main/ResearchAgast</a></p>
+<p><em>Elmar Mair, Gregory D. Hager, Darius Burschka, Michael Suppa, and Gerhard Hirzinger. Adaptive and generic corner detection based on the accelerated segment test. In <em>Proceedings of the European Conference on Computer Vision (ECCV’10)</em>, September 2010</em></p>
+<p><strong>AKAZE</strong><br>
+Accelerated version of KAZE detector. Operates in nonlinear scale space and not in Gaussian like SIFT and SURF do. Numerical methods are used to approximate the solution namely Fast Explicit Diffusion (FED), that are proven to work much faster than any other discretization scheme.</p>
+<p><strong><a href="http://robesafe.com/personal/pablo.alcantarilla/papers/Alcantarilla13bmvc.pdf">Fast Explicit Diffusion for Accelerated Features in Nonlinear Scale Spaces</a>. Pablo F. Alcantarilla, <a href="http://www.robesafe.com/personal/jnuevo/Home.html">Jesús Nuevo</a> and <a href="http://isit.u-clermont1.fr/~ab/">Adrien Bartoli</a>. <a href="http://bmvc2013.bristol.ac.uk/">In British Machine Vision Conference (BMVC)</a>, <em>Bristol, UK, September 2013</em>.</strong></p>
+<p><strong>BRISK</strong></p>
+<p><strong>FAST</strong></p>
+<p><strong>GFTT</strong></p>
+<p><strong>KAZE</strong><br>
+Operates in nonlinear scale space and not in Gaussian</p>
+<p><strong>MSD</strong></p>
+<p><strong>MSER</strong></p>
+<p><strong>ORB</strong></p>
+<p><strong>SIFT</strong></p>
+<p><strong>STAR</strong></p>
+<p><strong>SURF</strong></p>
+<p><em>DESCRIPTOR EXTRACTOR</em></p>
+<p><strong>AKAZE</strong><br>
+A highly efficient Modified-Local Difference Binary (M-LDB) descriptor that exploits gradient and intensity information from the nonlinear scale space.</p>
+<p><strong>BRIEF</strong></p>
+<p><strong>BRISK</strong></p>
+<p><strong>DAISY</strong></p>
+<p><strong>FREAK</strong></p>
+<p><strong>HOG</strong></p>
+<p><strong>KAZE</strong></p>
+<p><strong>LATCH</strong></p>
+<p><strong>LUCID</strong></p>
+<p><strong>LSS</strong></p>
+<p><strong>ORB</strong></p>
+<p><strong>SIFT</strong></p>
+<p><strong>SURF</strong></p>
+<h2 id="feature-matching">Feature Matching</h2>
+<p><strong>Brute Force</strong><br>
+[Source: <a href="https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_matcher/py_matcher.html">https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_matcher/py_matcher.html</a>]<br>
+Every feature descriptor in the first set is matched with all other features in second set using some distance calculation, returning the closest one. <strong><em>BFMatcher.match()</em> or <em>BFMatcher.knnMatch()</em> ??</strong></p>
+<p><em>NormType</em> (NORM_L1 / NORM_L2 / NORM_HAMMING / NORM_HAMMING2) --&gt; Distance measurement to be used<br>
+<em>Ratio:</em> 0.8 --&gt; ratio test proposed by D.Lowe in SIFT paper<br>
+<em>Cross Matching</em> --&gt; Cross check (bool). If it is true, matching returns only those matches with value (i,j) such that i-th descriptor in set A has j-th descriptor in set B as the best match and vice-versa. That is, the two features in both sets should match each other. It provides consistent result, and is a good alternative to ratio test proposed.<br>
+<em>Geometric Test</em>: Homography Matrix/Fundamental Matrix</p>
+<pre><code>IF Homography
+	Compute Method: All Points/RANSAC/LMedS/RHO
+	IF All Points
+	    Confidence
+	ELIF RANSAC
+	    Distance/Confidence/Maximum RANSAC iteration
+ELIF LMedS
+		Confidence
+ELIF RHO
+		Distance/Confidence
+ELSE
+	Compute Method: 7-point/8-point/RANSAC/LMedS
+	IF RANSAC
+	    	Distance/Confidence
+	ELIF LMedS
+		Confidence
+	ELSE (7-point/8-point)
+		Nothing
+</code></pre>
+<ul>
+<li>Homography: Finds a perspective transformation between two planes. Can be estimated either by using all points (<code>All points</code>) to compute an initial homography estimate with a simple least-squares scheme, or RANSAC-based robust method <code>RANSAC</code>, a Least-Median robust method (<code>LMedS</code>) or the PROSAC-based robust method <code>RHO</code>. The methods <code>RANSAC</code>, <code>LMeDS</code> and <code>RHO</code> try many different random subsets of the corresponding point pairs (of four pairs each), estimate the homography matrix using this subset and a simple least-square algorithm, and then compute the quality/goodness of the computed homography (which is the number of inliers for RANSAC or the median re-projection error for LMeDs). The functions find and return the perspective transformation between the source and the destination plane so that the back-projection error is minimized. Regardless of the method, robust or not, the computed homography matrix is refined further (using inliers only in case of a robust method) with the Levenberg-Marquardt method to reduce the re-projection error even more. The method <code>RANSAC</code> and <code>RHO</code> can handle practically any ratio of outliers but it needs a threshold to distinguish inliers from outliers. The method <code>LMeDS</code> does not need any threshold but it works correctly only when there are more than 50% of inliers. Finally, if there are no outliers and the noise is rather small, use the default method (<code>All points</code>).The function is used to find initial intrinsic and extrinsic matrices. Homography matrix is determined up to a scale</li>
+<li>Fundamental: Calculates the fundamental matrix (projective transformation with at least 7 point correspondences) from the corresponding points in two images, using either the <code>7-point algorithm</code>, the <code>8-point algorithm</code>, <code>RANSAC</code> or <code>LMedS</code>. Normally just one matrix is found. But in case of the <code>7-point algorithm</code>, the function may return up to 3 solutions.</li>
+</ul>
+<p><strong>FLANN</strong><br>
+FLANN stands for Fast Library for Approximate Nearest Neighbors [Muja 2009]. It contains a collection of algorithms optimized for fast nearest neighbor search in large datasets and for high dimensional features. For large datasets, it can be more efficient than Brute Force.</p>
+<p><em>Ratio:</em><br>
+<em>Cross Matching</em><br>
+<em>Geometric Test</em>: Homography Matrix/Fundamental Matrix</p>
+<pre><code>IF Homography
+	Compute Method: All Points/RANSAC/LMedS/RHO
+	IF All Points
+	    Confidence
+	ELIF RANSAC
+	    Distance/Confidence/Maximum RANSAC iteration
+ELIF LMedS
+		Confidence
+ELIF RHO
+		Distance/Confidence
+ELSE
+	Compute Method: 7-point/8-point/RANSAC/LMedS
+	IF RANSAC
+	    	Distance/Confidence
+	ELIF LMedS
+		Confidence
+	ELSE (7-point/8-point)
+		Nothing
+</code></pre>
+<h2 id="quality-control">QUALITY CONTROL</h2>
+<p><strong>ROC Curves</strong></p>
+<p><strong>DET Curves</strong></p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+</body>
+
+</html>
