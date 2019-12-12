@@ -169,7 +169,7 @@
     
       
         <li class="toctree-l3">
-          <a class="toctree-l4" href="#keypoint-detectors">Keypoint Detectors</a>
+          <a class="toctree-l4" href="#keypoint-detectors">KEYPOINT DETECTORS</a>
         </li>
     
       
@@ -234,7 +234,7 @@
     
       
         <li class="toctree-l3">
-          <a class="toctree-l4" href="#keypoint-descriptors">Keypoint Descriptors</a>
+          <a class="toctree-l4" href="#keypoint-descriptors">KEYPOINT DESCRIPTORS</a>
         </li>
     
       
@@ -380,13 +380,6 @@
     <a class="" href="index_old/">HELP for PhotoMatch</a>
   </li>
     
-      
-
-
-  <li class="navtree toctree-l1 inactive">
-    <a class="" href="index_old2/">HELP for PhotoMatch</a>
-  </li>
-    
   </ul>
       </div>
       &nbsp;
@@ -429,101 +422,75 @@ Full Image Size/Max Image Size</p>
 <p>Contrast Preserving Decolorization</p>
 <h3 id="acebsf">ACEBSF</h3>
 <p><em>Adaptive Contrast Enhancement Based on modified Sigmoid Function.</em> 
-It first improves the poor quality images using a modified sigmoid function and then applies contrast limited adaptive histogram equalization (AHE) to enhance image contrast.</p>
-<p><em>Parameters</em></p>
-<ul>
-<li>Blocksize (Width: 8/Height: 8)</li>
-<li>L: 0.3</li>
-<li>K1: 10</li>
-<li>K2: 0.50</li>
-</ul>
-<p>[ACEBSF]: <em>S. Lal and M. Chandra, "Efficient algorithm for contrast enhancement of natural images," The International Arab Journal of Information Technology, vol. 11, no. 1, January 2014.</em></p>
+<em>Parameters</em>
+ - Blocksize (Width: 8/Height: 8)
+ - L: 0.3
+ - K1: 10
+ - K2: 0.50</p>
+<p>[Source] <em>S. Lal and M. Chandra, "Efficient algorithm for contrast enhancement of natural images," The International Arab Journal of Information Technology, vol. 11, no. 1, January 2014.</em></p>
 <h3 id="clahe">CLAHE</h3>
 <p><em>Contrast Limited Adaptive Histogram Equalization.</em>
-CLAHE is a local contrast enhancement technique robust to outliers. Local contrast enhancement methods such as adaptive histogram equalization (AHE) divide the original image into several non-overlapped sub-blocks and apply histogram equalization accordingly. CLAHE is an improvement of AHE and performs well on low contrast images.</p>
-<p><em>Parameters</em></p>
-<ul>
-<li>Clip Limit: 40</li>
-<li>Tiles Size X: 8</li>
-<li>Tiles Size Y: 8</li>
-</ul>
-<p>[CLAHE]: <em>Zuiderveld, Karel. “Contrast Limited Adaptive Histograph Equalization.” _Graphic Gems IV</em>. San Diego: Academic Press Professional, 1994. 474–485._
-<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3092044/">Source</a> </p>
+CLAHE is a local contrast enhancement technique robust to outliers. Local contrast enhancement methods such as adaptive histogram equalization (AHE) divide the original image into several non-overlapped sub-blocks and apply histogram equalization accordingly. CLAHE is an improvement of AHE and performs well on low contrast images.
+<em>Parameters</em>
+ - Clip Limit: 40
+ - Tiles Size X: 8
+ - Tiles Size Y: 8</p>
+<p>[Source] (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3092044/) </p>
 <h3 id="cmbfhe">CMBFHE</h3>
-<p><em>Cascaded Multistep Binomial Filtering Histogram Equalization.</em>
-Based on the POSHE approach using cascaded multistep binomial filtering histogram equalization to reduce algorithm complexity. Similar to other local adaptive techniques, it exploits image sub-blocks (and not pixels), achieving results with effect similar to the application of a low-pass filter (LPF) avoiding the blocking effect.</p>
-<p><em>Parameters</em></p>
-<ul>
-<li>Block Size (Width: 11/Height: 11)</li>
-</ul>
-<p>[CMBFHE]: <em>F. Lamberti, B. Montrucchio, and A. Sanna, "CMBFHE: a novel contrast enhancement technique based on cascaded multistep binomial filtering histogram equalization," TCE, vol. 52, no. 3, 2006.</em>
-[POSHE]: <em>J. Y. Kim, L. S. Kim, and S. H. Hwang, “An advanced contrast enhancement using partially overlapped sub-block histogram equalization,” IEEE Transactions on Circuits and Systems for Video Technology, Vol. 11(4), pp. 475-484, 2001.</em></p>
+<p>Cascaded Multistep Binomial Filtering Histogram Equalization.
+<em>Parameters</em>
+ - Block Size (Width: 11/Height: 11)</p>
+<p>Source: <em>F. Lamberti, B. Montrucchio, and A. Sanna, "CMBFHE: a novel contrast enhancement technique based on cascaded multistep binomial filtering histogram equalization," TCE, vol. 52, no. 3, 2006.</em></p>
 <h3 id="dhe">DHE</h3>
-<p><em>Dynamic Histogram Equalization.</em>
-Traditional histogram equalization employing a histogram partitioning operation to avoid dominating components and achieving better overall contrast enhancement with controlled dynamic range of gray levels while also reassuring minimum detail loss.</p>
-<p><em>Parameters</em></p>
-<ul>
-<li>x: 1</li>
-</ul>
-<p>[Source]: <em>M. Abdullah-Al-Wadud, Md. Hasanul Kabir, M. Ali Akber Dewan, and O. Chae, "A dynamic histogram equalization for image contrast enhancement," Intl. Conf. Consumer Electronics, pp. 1-2, 2007.</em></p>
+<p>Dynamic Histogram Equalization.
+<em>Parameters</em>
+ - x: 1</p>
+<p>Source: <em>M. Abdullah-Al-Wadud, Md. Hasanul Kabir, M. Ali Akber Dewan, and O. Chae, "A dynamic histogram equalization for image contrast enhancement," Intl. Conf. Consumer Electronics, pp. 1-2, 2007.</em></p>
 <h3 id="fahe">FAHE</h3>
-<p><em>Fast implementation of Adaptive Histogram Equalization</em> 
-Software techniques on histogram acquisition and accumulation as well on the block size decision are used to reduce computational complexity.</p>
-<p><em>Parameters</em></p>
-<ul>
-<li>Block Size (Width: 11/Height: 11)</li>
-</ul>
-<p>[Source]: <em>Z. Wang and J. Tao, "A fast implementation of adaptive histogram equalization," in Proc. ICSP, 2006.</em></p>
+<p>Fast implementation of Adaptive Histogram Equalization. Regional contrast enhancement. This function enhances a totally same result as that of the AHE1974, yet an extremely low complexity is required.
+<em>Parameters</em>
+ - Block Size (Width: 11/Height: 11)</p>
+<p>Source: <em>Z. Wang and J. Tao, "A fast implementation of adaptive histogram equalization," in Proc. ICSP, 2006.</em></p>
 <h3 id="hmclahe">HMCLAHE</h3>
-<p><em>Histogram Modified Contrast Limited Adaptive Histogram Equalization.</em>
-It incorporates both histogram modifications as an optimization technique and CLAHE. It controls the level of contrast enhancement, before CLAHE, resulting a strong contrast image with enhanced details.</p>
-<p><em>Parameters</em></p>
+<p>Histogram Modified Contrast Limited Adaptive Histogram Equalization.
+<em>Parameters</em></p>
 <ul>
 <li>Block Size (Width: 11/Height: 11)</li>
-<li>L: 0.03</li>
-<li>Phi: 0.50</li>
 </ul>
-<p>[Source]: <em>M. Sundaram, K. Ramar, N.Arumugam and G. Prabin, "Histogram based contrast enhancement for mammogram images," International Conference on Signal Processing, Communication, Computing and Networking Technologies, 2011.</em></p>
+<p>L: 0.03
+Phi: 0.50</p>
 <h3 id="lce-bsescs">LCE-BSESCS</h3>
-<p><em>Local Contrast Enhancement Utilizing Bidirectional Switching Equalization of Separated and Clipped Sub-histograms.</em></p>
-<p><em>Parameters</em></p>
+<p>Local Contrast Enhancement Utilizing Bidirectional Switching Equalization of Separated and Clipped Subhistograms.
+<em>Parameters</em></p>
 <ul>
 <li>Block Size (Width: 33/Height: 33)</li>
 </ul>
 <h3 id="msrcp">MSRCP</h3>
-<p><em>Multiscale Retinex with Chromaticity Preservation.</em></p>
-<p>Based on the original Multiscale Retinex method, it applies some modifications on the post-processing steps and preserves image chromaticity. Recommended for images with a correct color distribution and white lightning.</p>
-<p><em>Parameters</em></p>
-<ul>
-<li>Retinex Scales</li>
-<li>Small scale: 10</li>
-<li>Mid Scale: 100</li>
-<li>Large scale: 220</li>
-</ul>
-<p>[Source]: <em>Ana Bel´en Petro, Catalina Sbert, Jean-Michel Morel, Multiscale Retinex, Image Processing On Line, 2014.</em></p>
+<p>Multiscale Retinex with Chromaticity Preservation.</p>
+<p>A local contrast enhancement method. It takes single channel of a color image for enhancement, thus consuming less time during process in contrast to former arts.</p>
+<p><em>Parameters</em>
+ - Retinex Scales
+ - Small scale: 10
+ - Mid Scale: 100
+ - Large scale: 220</p>
+<p>Source: Ana Bel´en Petro1, Catalina Sbert2, Jean-Michel Morel3 , "Multiscale Retinex," Image Processing On Line, 2014.</p>
 <h3 id="noshp">NOSHP</h3>
-<p><em>Non-Overlapped Sub-blocks and local Histogram Projection.</em>
-To reduce computational complexity, it segments the image into non-overlapped sub-blocks where the histogram projection (HP) is then executed individually. Subsequently, each sub-block is related to its adjacent three ones by certain weights, so that the integral image and local details can be enhanced.</p>
-<p><em>Parameters</em></p>
-<ul>
-<li>Block Size (Width: 127/Height: 127)</li>
-</ul>
+<p>Non-Overlapped Sub-blocks and local Histogram Projection. non-overlapped sub-blocks and local histogram projection based contrast enhancement (NOSHP)</p>
+<p><em>Parameters</em>
+ - Block Size (Width: 127/Height: 127)</p>
 <p>[Source:] <em>B. Liu, W. Jin, Y. Chen, C. Liu, and L. Li, "Contrast enhancement using non-overlapped sub-blocks and local histogram projection," TCE, vol. 57, no. 2, 2011.</em></p>
 <h3 id="pohe">POHE</h3>
-<p><em>Parametric-oriented histogram equalization (POHE)</em>
-Local enhancement method using integral images to reduce computational time during the construction of the probability distribution function and the transformation function.</p>
-<p><em>Parameters</em></p>
-<ul>
-<li>Block Size (Width: 127/Height: 127)</li>
-</ul>
+<p>Parametric-oriented histogram equalization (POHE)
+<em>Parameters</em>
+ - Block Size (Width: 127/Height: 127)</p>
 <p>Source: <em>Y. F. Liu, J. M. Guo, B. S. Lai, and J. D. Lee, "High efficient contrast enhancement using parametric approximation," in Proc. IEEE ICASSP, pp. 2444-2448, 26-31 May 2013</em></p>
 <h3 id="rswhe">RSWHE</h3>
-<p><em>Recursively Separated and Weighted Histogram Equalization.</em>
-It segments an input histogram into two or more sub-histograms recursively, modifies them using a weighting process based on a normalized power law function, and performs HE on the weighted sub-histograms independently, achieving brightness preservation and image contrast enhancement.</p>
-<p>[Source]: <em>Mary Kim and Min Gyo Chung, Recursively Separated and Weighted Histogram Equalization for Brightness Preservation and Contrast Enhancement, 2008.</em></p>
+<p>Recursively Separated and Weighted Histogram Equalization.
+Recursively separated and weighted histogram equalization (RSWHE)</p>
+<p>Source: <em>Mary Kim and Min Gyo Chung, "Recursively Separated and Weighted Histogram Equalization for Brightness Preservation and Contrast Enhancement," 2008.</em></p>
 <h3 id="wallis-filter">Wallis Filter</h3>
-<p>Locally adaptive contrast adjustment filter to enhance image gray-scale details. It ensures that within every specified window, the local mean and the standard deviation will match some given (user-specified) values. Used to eliminate uneven illumination, where bright and dark tones are both present.</p>
-<p><em>Parameters</em></p>
+<p>Locally adaptive contrast adjustment filter to enhance image gray-scale details. It ensures that within every specified window, the local mean and the standard deviation will match some given (user-specified) values. It is great to eliminate uneven illumination, where bright and dark tones are both present.
+<em>Parameters</em></p>
 <ul>
 <li>Contrast: 1</li>
 <li>Brightness: 0.20</li>
@@ -533,7 +500,7 @@ It segments an input histogram into two or more sub-histograms recursively, modi
 </ul>
 <p>[Source] (https://www.microimages.com/documentation/TechGuides/55Wallis.pdf)</p>
 <h2 id="feature-extraction">Feature Extraction</h2>
-<h3 id="keypoint-detectors"><em>Keypoint Detectors</em></h3>
+<h3 id="keypoint-detectors"><em>KEYPOINT DETECTORS</em></h3>
 <h3 id="agast">AGAST</h3>
 <p>Adaptive and Generic Accelerated Segment Test. Corner detector. It is an optimization of FAST, thus also based on Accelerated Segment Test (AST), but  its decision tree is generic, with no need to retrain the it every time.
 [Source: http://www.i6.in.tum.de/Main/ResearchAgast]</p>
@@ -576,7 +543,7 @@ It segments an input histogram into two or more sub-histograms recursively, modi
 <h3 id="surf">SURF</h3>
 <p>SURF uses Fast Hessian as a detection method that is based on integral images through Hessian matrix approximation. Box type convolution filters of different sizes are used to approximate second order Gaussian derivatives for each image point. Keypoints are regions where the determinant becomes maximal through non-maximal suppression.</p>
 <p><em>Bay, H., Tuytelaars, T. and Van Gool, L., 2006, May. Surf: Speeded up robust features. In <em>European conference on computer vision</em> (pp. 404-417). Springer, Berlin, Heidelberg.</em></p>
-<h3 id="keypoint-descriptors"><em>Keypoint Descriptors</em></h3>
+<h3 id="keypoint-descriptors"><em>KEYPOINT DESCRIPTORS</em></h3>
 <h3 id="akaze_1">AKAZE</h3>
 <p>A highly efficient Modified-Local Difference Binary (M-LDB) descriptor that exploits gradient and intensity information from the nonlinear scale space. The LDB descriptor follows the same principle as BRIEF, but using binary tests between the aver-age of areas instead of single pixels for additional robustness. M-LDB uses the derivatives computed in the feature detection step, reducing the number of operations required to construct the descriptor.</p>
 <p><em>Fast Explicit Diffusion for Accelerated Features in Nonlinear Scale Spaces. Pablo F. Alcantarilla, Jesús Nuevo and Adrien Bartoli]. In British Machine Vision Conference (BMVC), <em>Bristol, UK, September 2013</em>.</em></p>
@@ -722,5 +689,5 @@ ELSE
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-12-12 17:06:16
+Build Date UTC : 2019-12-12 14:47:40
 -->
