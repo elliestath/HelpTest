@@ -21,7 +21,7 @@ It first improves the poor quality images using a modified sigmoid function and 
  - K1: 10
  - K2: 0.50
 
-[ACEBSF]: _Lal, S. and Chandra, M., 2014. Efficient algorithm for contrast enhancement of natural images. International  Arab Journal of Information Technology, Vol. 11(1), pp. 95-102._
+[[ACEBSF](http://iajit.org/PDF/vol.11,no.1/5307.pdf)] _Lal, S. and Chandra, M., 2014. Efficient algorithm for contrast enhancement of natural images. International  Arab Journal of Information Technology, Vol. 11(1), pp. 95-102._
 
 ## CLAHE
 
@@ -50,9 +50,9 @@ Based on the POSHE approach using cascaded multistep binomial filtering histogra
 
  - Block Size (Width: 11/Height: 11)
 
-[CMBFHE]: _Lamberti, F., Montrucchio, B. and San, A., 2006. CMBFHE: a novel contrast enhancement technique based on cascaded multistep binomial filtering histogram equalization.  IEEE Transactions on Consumer Electronics, Vol. 52(3), pp.966-974._
+[[CMBFHE](https://ieeexplore.ieee.org/abstract/document/1706495)]: _Lamberti, F., Montrucchio, B. and San, A., 2006. CMBFHE: a novel contrast enhancement technique based on cascaded multistep binomial filtering histogram equalization.  IEEE Transactions on Consumer Electronics, Vol. 52(3), pp.966-974._
 
-[POSHE]: _Kim, J.Y., Kim, L.S. and Hwang, S.H., 2001. An advanced contrast enhancement using partially overlapped sub-block histogram equalization. IEEE Transactions on Circuits and Systems for Video Technology, Vol. 11(4), pp. 475-484._
+[[POSHE](https://pdfs.semanticscholar.org/32cb/6dd6921b2ae414a1bcef1edb915828159d65.pdf)]: _Kim, J.Y., Kim, L.S. and Hwang, S.H., 2001. An advanced contrast enhancement using partially overlapped sub-block histogram equalization. IEEE Transactions on Circuits and Systems for Video Technology, Vol. 11(4), pp. 475-484._
 
 ## DHE
 
@@ -64,7 +64,7 @@ Traditional histogram equalization employing a histogram partitioning operation 
 
  - x: 1
 
-[DHE]: _Abdullah-Al-Wadud, M., Kabir, M.H., Dewan, M.A.A. and Chae, O., 2007. A dynamic histogram equalization for image contrast enhancement. IEEE Transactions on Consumer Electronics, Vol. 53(2), pp. 593-600._
+[[DHE](https://www.researchgate.net/profile/M_Dewan/publication/3183129_A_Dynamic_Histogram_Equalization_for_Image_Contrast_Enhancement/links/55559cdd08ae980ca60af136/A-Dynamic-Histogram-Equalization-for-Image-Contrast-Enhancement.pdf)]: _Abdullah-Al-Wadud, M., Kabir, M.H., Dewan, M.A.A. and Chae, O., 2007. A dynamic histogram equalization for image contrast enhancement. IEEE Transactions on Consumer Electronics, Vol. 53(2), pp. 593-600._
 
 ## FAHE
 
@@ -76,7 +76,7 @@ Software techniques are used on histogram acquisition and accumulation as well o
 
  - Block Size (Width: 11/Height: 11)
 
-[FAHE]: _Wang, Z. and Tao, J., 2006. A fast implementation of adaptive histogram equalization. In 2006 8th international Conference on Signal Processing, Vol. 2. IEEE._
+[[FAHE](https://ieeexplore.ieee.org/abstract/document/4129083)]: _Wang, Z. and Tao, J., 2006. A fast implementation of adaptive histogram equalization. In 2006 8th international Conference on Signal Processing, Vol. 2. IEEE._
 
 ## HMCLAHE
 
@@ -90,7 +90,7 @@ It incorporates both histogram modifications as an optimization technique and CL
  - L: 0.03
  - Phi: 0.50
 
-[HMCLAHE]: _Sundaram, M., Ramar, K., Arumugam, N. and Prabin, G., 2011. Histogram based contrast enhancement for mammogram images. In 2011 International Conference on Signal Processing, Communication, Computing and Networking Technologies, pp. 842-846. IEEE._
+[[HMCLAHE](https://ieeexplore.ieee.org/abstract/document/6024667)]: _Sundaram, M., Ramar, K., Arumugam, N. and Prabin, G., 2011. Histogram based contrast enhancement for mammogram images. In 2011 International Conference on Signal Processing, Communication, Computing and Networking Technologies, pp. 842-846. IEEE._
 
 ## LCE-BSESCS
 
@@ -103,7 +103,7 @@ Similar to other local HE, it aims to enhance the local contrast and increase si
  - Block Size (Width: 33/Height: 33)
  
  
-[LCE-BSESCS]: _Ibrahim, H. and Hoo, S.C., 2014. Local contrast enhancement utilizing bidirectional switching equalization of separated and clipped subhistograms. Mathematical Problems in Engineering._
+[[LCE-BSESCS](http://downloads.hindawi.com/journals/mpe/2014/848615.pdf)]: _Ibrahim, H. and Hoo, S.C., 2014. Local contrast enhancement utilizing bidirectional switching equalization of separated and clipped subhistograms. Mathematical Problems in Engineering._
 
 ## MSRCP
 
@@ -118,7 +118,7 @@ Based on the original Multiscale Retinex method, it applies some modifications o
  - Mid Scale: 100
  - Large scale: 220
 
-[MSRCP]: _Petro, A.B., Sbert, C. and Morel, J.M., 2014. Multiscale retinex. Image Processing On Line, pp.71-88._
+[[MSRCP](https://www.ipol.im/pub/art/2014/107/article_lr.pdf)]: _Petro, A.B., Sbert, C. and Morel, J.M., 2014. Multiscale retinex. Image Processing On Line, pp.71-88._
 
 ## NOSHP
 
@@ -130,7 +130,7 @@ To reduce computational complexity, it segments the image into non-overlapped su
 
  - Block Size (Width: 127/Height: 127)
 
-[NOSHP]: _Liu, B., Jin, W., Chen, Y., Liu, C. and Li, L., 2011. Contrast enhancement using non-overlapped sub-blocks and local histogram projection. IEEE Transactions on Consumer Electronics, Vol. 57(2), pp. 583-588._
+[[NOSHP](https://ieeexplore.ieee.org/abstract/document/5955195)]: _Liu, B., Jin, W., Chen, Y., Liu, C. and Li, L., 2011. Contrast enhancement using non-overlapped sub-blocks and local histogram projection. IEEE Transactions on Consumer Electronics, Vol. 57(2), pp. 583-588._
 
 ## POHE
 
@@ -142,7 +142,7 @@ Local enhancement method using integral images to reduce computational time duri
 
  - Block Size (Width: 127/Height: 127)
 
-[POHE]: _Liu, Y.F., Guo, J.M., Lai, B.S. and Lee, J.D., 2013. High efficient contrast enhancement using parametric approximation. In 2013 IEEE International Conference on Acoustics, Speech and Signal Processing, pp. 2444-2448. IEEE._
+[[POHE](http://150.162.46.34:8080/icassp2013/pdfs/0002444.pdf)]: _Liu, Y.F., Guo, J.M., Lai, B.S. and Lee, J.D., 2013. High efficient contrast enhancement using parametric approximation. In 2013 IEEE International Conference on Acoustics, Speech and Signal Processing, pp. 2444-2448. IEEE._
 
 ## RSWHE
 
@@ -150,7 +150,7 @@ Local enhancement method using integral images to reduce computational time duri
 
 It segments an input histogram into two or more sub-histograms recursively, modifies them using a weighting process based on a normalized power law function, and performs HE on the weighted sub-histograms independently, achieving brightness preservation and image contrast enhancement.
 
-[RSWHE]: _Kim, M. and Chung, M.G., 2008. Recursively separated and weighted histogram equalization for brightness preservation and contrast enhancement. IEEE Transactions on Consumer Electronics, Vol., 54(3), pp. 1389-1397._
+[[RSWHE](https://ieeexplore.ieee.org/document/4637632)]: _Kim, M. and Chung, M.G., 2008. Recursively separated and weighted histogram equalization for brightness preservation and contrast enhancement. IEEE Transactions on Consumer Electronics, Vol., 54(3), pp. 1389-1397._
 
 
 ## Wallis Filter
