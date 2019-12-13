@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Feature Matching - PhotoMatch</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Feature Matching";
+    var mkdocs_page_input_path = "Feature Matching.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> PhotoMatch</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../Feature Extraction/">Feature Extraction</a>
+  </li>
+    
+      
+
+
+  
+    
+    <li class="navtree toctree-l1 page current">
+      <a class="current" href="./">
+        Feature Matching
+      </a>
+    </li>
+    
+      
+
+
+
+  <li class="toctree-l1 current">
+    <ul class="subnav-l1 current">
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#brute-force">Brute Force</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#flann">FLANN</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../Image PreProcessing/">Preprocessing</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../QualityControl/">Quality Control</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../home/">Help PhotoMatch</a>
+  </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">PhotoMatch</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Feature Matching</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="feature-matching">Feature Matching</h1>
+<h2 id="brute-force">Brute Force</h2>
+<p><a href="https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_matcher/py_matcher.html">Source</a></p>
+<p>Every feature descriptor in the first set is matched with all other features in second set using some distance calculation, returning the closest one. <strong><em>BFMatcher.match()</em> or <em>BFMatcher.knnMatch()</em> ??</strong></p>
+<p><em>Parameters</em></p>
+<ul>
+<li><em>NormType</em></li>
+</ul>
+<p>NORM_L1 / NORM_L2 / NORM_HAMMING / NORM_HAMMING2 --&gt; Distance measurement to be used</p>
+<ul>
+<li><em>Ratio:</em></li>
+</ul>
+<p>0.8: ratio test proposed by D.Lowe in SIFT paper</p>
+<ul>
+<li><em>Cross Matching</em></li>
+</ul>
+<p>Cross check (bool). If it is true, matching returns only those matches with value (i,j) such that i-th descriptor in set A has j-th descriptor in set B as the best match and vice-versa. That is, the two features in both sets should match each other. It provides consistent result, and is a good alternative to ratio test proposed.</p>
+<ul>
+<li><em>Geometric Test</em></li>
+</ul>
+<p>Homography Matrix/Fundamental Matrix</p>
+<pre><code>IF Homography
+    Compute Method: All Points/RANSAC/LMedS/RHO
+    IF All Points
+        Confidence
+    ELSE IF RANSAC
+        Distance/Confidence/Maximum RANSAC iteration
+ELSE IF LMedS
+        Confidence
+ELSE IF RHO
+        Distance/Confidence
+ELSE
+    Compute Method: 7-point/8-point/RANSAC/LMedS
+    IF RANSAC
+            Distance/Confidence
+    ELSE IF LMedS
+        Confidence
+    ELSE (7-point/8-point)
+        Nothing
+</code></pre>
+<ol>
+<li>Homography</li>
+</ol>
+<p>Finds a perspective transformation between two planes. Can be estimated either by using all points (<code>All points</code>) to compute an initial homography estimate with a simple least-squares scheme, or RANSAC-based robust method <code>RANSAC</code>, a Least-Median robust method (<code>LMedS</code>) or the PROSAC-based robust method <code>RHO</code>. The methods <code>RANSAC</code>, <code>LMeDS</code> and <code>RHO</code> try many different random subsets of the corresponding point pairs (of four pairs each), estimate the homography matrix using this subset and a simple least-square algorithm, and then compute the quality/goodness of the computed homography (which is the number of inliers for RANSAC or the median re-projection error for LMeDs). The functions find and return the perspective transformation between the source and the destination plane so that the back-projection error is minimized. Regardless of the method, robust or not, the computed homography matrix is refined further (using inliers only in case of a robust method) with the Levenberg-Marquardt method to reduce the re-projection error even more. The method <code>RANSAC</code> and <code>RHO</code> can handle practically any ratio of outliers but it needs a threshold to distinguish inliers from outliers. The method <code>LMeDS</code> does not need any threshold but it works correctly only when there are more than 50% of inliers. Finally, if there are no outliers and the noise is rather small, use the default method (<code>All points</code>).The function is used to find initial intrinsic and extrinsic matrices. Homography matrix is determined up to a scale.</p>
+<ol>
+<li>Fundamental</li>
+</ol>
+<p>Calculates the fundamental matrix (projective transformation with at least 7 point correspondences) from the corresponding points in two images, using either the <code>7-point algorithm</code>, the <code>8-point algorithm</code>, <code>RANSAC</code> or <code>LMedS</code>. Normally just one matrix is found. But in case of the <code>7-point algorithm</code>, the function may return up to 3 solutions.</p>
+<h2 id="flann">FLANN</h2>
+<p><em>Fast Library for Approximate Nearest Neighbors</em></p>
+<p>It contains a collection of algorithms optimized for fast nearest neighbor search in large datasets and for high dimensional features. For large datasets, it can be more efficient than Brute Force.</p>
+<ul>
+<li><em>Ratio:</em></li>
+<li><em>Cross Matching</em></li>
+<li><em>Geometric Test</em></li>
+</ul>
+<p>Homography Matrix/Fundamental Matrix</p>
+<pre><code>IF Homography
+    Compute Method: All Points/RANSAC/LMedS/RHO
+    IF All Points
+        Confidence
+    ELSE IF RANSAC
+        Distance/Confidence/Maximum RANSAC iteration
+ELSE IF LMedS
+        Confidence
+ELSE IF RHO
+        Distance/Confidence
+ELSE
+    Compute Method: 7-point/8-point/RANSAC/LMedS
+    IF RANSAC
+            Distance/Confidence
+    ELSE IF LMedS
+        Confidence
+    ELSE (7-point/8-point)
+        Nothing
+</code></pre>
+<p>[FLANN]: Muja, M. and Lowe, D.G., 2017. Fast library for approximate nearest neighbors. <em>Dosegljivo: https://github. com/mariusmuja/flann</em>.</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Image PreProcessing/" class="btn btn-neutral float-right" title="Preprocessing">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Feature Extraction/" class="btn btn-neutral" title="Feature Extraction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Feature Extraction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Image PreProcessing/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
