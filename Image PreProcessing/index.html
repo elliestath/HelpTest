@@ -203,7 +203,8 @@
 <p><strong>PARAMETERS</strong></p>
 <p>Full Image Size/Max Image Size</p>
 <h2 id="decolorization">Decolorization</h2>
-<p>Contrast Preserving Decolorization</p>
+<p>Contrast Preserving Decolorization, it applies an RGB to grayscale transform while simultaneously preserving the contrast of the image <a href="https://dl.acm.org/doi/pdf/10.1145/2407746.2407780">(Lu et al, 2012</a>).
+This technique has a potential on feature detection, since usually just the green channel is preserved</p>
 <h2 id="acebsf">ACEBSF</h2>
 <p><em>Adaptive Contrast Enhancement Based on modified Sigmoid Function.</em> </p>
 <p>It first improves the poor quality images using a modified sigmoid function and then applies contrast limited adaptive histogram equalization (AHE) to enhance image contrast.</p>
@@ -301,7 +302,7 @@
 <p>It segments an input histogram into two or more sub-histograms recursively, modifies them using a weighting process based on a normalized power law function, and performs HE on the weighted sub-histograms independently, achieving brightness preservation and image contrast enhancement.</p>
 <p>[<a href="https://ieeexplore.ieee.org/document/4637632">RSWHE</a>]: <em>Kim, M. and Chung, M.G., 2008. Recursively separated and weighted histogram equalization for brightness preservation and contrast enhancement. IEEE Transactions on Consumer Electronics, Vol., 54(3), pp. 1389-1397.</em></p>
 <h2 id="wallis-filter">Wallis Filter</h2>
-<p>Locally adaptive contrast adjustment filter to enhance image gray-scale details. It ensures that within every specified window, the local mean and the standard deviation will match some given (user-specified) values. Recommended to eliminate uneven illumination, where bright and dark tones are both present.</p>
+<p>Locally adaptive contrast adjustment filter to enhance image gray-scale details and improve, thus keypoint extraction. It ensures that within every specified window (user-defined), the local mean and the standard deviation will match some per-specified values. Hence, it adjusts the brightness and contrast of pixels. Recommended to eliminate uneven illumination, where bright and dark tones are both present.</p>
 <p><em>Parameters</em></p>
 <ul>
 <li>Contrast: 1</li>
