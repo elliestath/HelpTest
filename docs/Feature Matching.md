@@ -7,6 +7,9 @@
 
 Every feature descriptor in the first set is matched with all other features in second set using some distance calculation, returning the closest one. **_BFMatcher.match()_ or _BFMatcher.knnMatch()_ ??**
 
+
+*Matching Strategy*  Robust Matching/ GMS
+
 *Parameters*
 
  - *NormType*
@@ -58,6 +61,8 @@ Calculates the fundamental matrix (projective transformation with at least 7 poi
 *Fast Library for Approximate Nearest Neighbors*
 
 It contains a collection of algorithms optimized for fast nearest neighbor search in large datasets and for high dimensional features. For large datasets, it can be more efficient than Brute Force.
+
+ROBUST MATCHING/GMS
 
  - *Ratio:*
  - *Cross Matching*

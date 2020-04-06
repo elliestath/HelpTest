@@ -6,7 +6,9 @@ This step offers the option to use image enhancement techniques that could poten
 Full Image Size/Max Image Size
 
 ## Decolorization
-Contrast Preserving Decolorization
+
+Contrast Preserving Decolorization, it applies an RGB to grayscale transform while simultaneously preserving the contrast of the image [(Lu et al, 2012](https://dl.acm.org/doi/pdf/10.1145/2407746.2407780)).
+This technique has a potential on feature detection, since usually just the green channel is preserved
 
 ## ACEBSF
 
@@ -155,7 +157,7 @@ It segments an input histogram into two or more sub-histograms recursively, modi
 
 ## Wallis Filter
 
-Locally adaptive contrast adjustment filter to enhance image gray-scale details. It ensures that within every specified window, the local mean and the standard deviation will match some given (user-specified) values. Recommended to eliminate uneven illumination, where bright and dark tones are both present.
+Locally adaptive contrast adjustment filter to enhance image gray-scale details and improve, thus keypoint extraction. It ensures that within every specified window (user-defined), the local mean and the standard deviation will match some per-specified values. Hence, it adjusts the brightness and contrast of pixels. Recommended to eliminate uneven illumination, where bright and dark tones are both present.
 
 *Parameters*
 
