@@ -19,7 +19,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Quality Control";
-    var mkdocs_page_input_path = "QualityControl.md";
+    var mkdocs_page_input_path = "Quality Control.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -74,7 +74,7 @@
 
 
   <li class="navtree toctree-l1 inactive">
-    <a class="" href="../Image PreProcessing/">Preprocessing</a>
+    <a class="" href="../Image Preprocessing/">Preprocessing</a>
   </li>
     
       
@@ -144,8 +144,17 @@
             <div class="section">
               
                 <h1 id="quality-control">Quality Control</h1>
+<p>As a quality measure of the implemented feature extraction methods, the commonly used in statistics ROC and DET curves are implemented. Ground truth data are expected to be provided by the user.</p>
 <h2 id="roc-curves">ROC Curves</h2>
+<p><em>Receiver Operating Characteristics</em></p>
+<p>Probability curves, plotting the True Positive (TP) rate against to the false positive (FP). True Positives (y-axis) is defined as the percentage of correct matches over the total number of matches while the False positive (x-axis) is the respective percentage of incorrect matches.</p>
+<p>The highest the AUC (Area Under the Curve) index is, the better our results are.</p>
+<p>True Positive Rate = TP/(TP+FN)</p>
+<p>For more details see
+<a href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc">Google Developers</a></p>
 <h2 id="det-curves">DET Curves</h2>
+<p><em>Detection Error Trade-off</em></p>
+<p>Commonly used in classificatio problems, it plots the false negative rate against the false positive rate. The lines shows the trade-off between the above.</p>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>
@@ -157,7 +166,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../Image PreProcessing/" class="btn btn-neutral" title="Preprocessing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Image Preprocessing/" class="btn btn-neutral" title="Preprocessing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -183,7 +192,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../Image PreProcessing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Image Preprocessing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>
